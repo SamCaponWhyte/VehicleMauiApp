@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:MauiApp1.ViewModels"
+             x:Class="MauiApp1.Views.MainPage"
+             Title="MainPage">
+
+    <Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+        <RowDefinition Height="0.6*" />
+        <RowDefinition Height="0.4*" />
+    </Grid.RowDefinitions>
+
+    <Image Source="dotnet_bot.png" Grid.Row="0"/>
+
+    <Border Stroke="#C49"
+    Grid.Row="1"
+    StrokeThickness="4"
+    Background="#2B0"
+    Padding="16,8"
+    HorizontalOptions="Center">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="40,0,0,40" />
+        </Border.StrokeShape>
+
+        <VerticalStackLayout Grid.Row="1">
+            <Label Text=" Car thing" FontSize="75"/>
+            <Label Text="Car go broom" FontSize="45"/>
+        </VerticalStackLayout>
+    </Border>
+
+</Grid>
+
+</ContentPage>

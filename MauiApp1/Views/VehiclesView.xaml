@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiApp1.ViewModels"
+             xmlns:model="clr-namespace:MauiApp1.Models"
+             x:Class="MauiApp1.Views.VehiclesView"
+             Title="VehiclesView">
+    <ContentPage.BindingContext>
+        <vm:CommunityViewModel />
+    </ContentPage.BindingContext>
+
+    <CollectionView ItemsSource="{Binding Vehicles}" Margin="16">
+        <CollectionView.Header>
+            <Label Text="Vehicles" FontSize="Large" />
+        </CollectionView.Header>
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="20" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:Vehicle">
+                <Border MinimumWidthRequest="100" MinimumHeightRequest="0">
+                    <Grid RowDefinitions="0.6*, 0.4*">
+
+                        <Image Grid.ColumnSpan="2"
+                           Source="{Binding ImageUrl}"
+                           Aspect="AspectFill" />
+
+                        <Grid ColumnDefinitions="auto,auto,*"
+                              Grid.Row="1">
+
+                            <Label Grid.Column="1"
+                               Text="{Binding Make}"
+                               Margin="8,8,0,8" />
+
+                            <Label
+                               Grid.Column="2"
+                               Text="{Binding Model}"
+                               Margin="4,8,0,8" />
+
+                        </Grid>
+
+
+
+                    </Grid>
+                </Border>
+            </DataTemplate>
+
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+
+</ContentPage>
